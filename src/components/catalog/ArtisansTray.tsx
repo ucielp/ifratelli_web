@@ -62,7 +62,7 @@ export function ArtisansTray() {
     <section id="catalog" className="py-20 bg-linen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header Section */}
+        {/* Header Section (Clean & Professional without decorative emojis) */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <span className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-olive/10 px-3 py-1 rounded-full">
             The Artisan&apos;s Tray • 14 Unique Creations
@@ -78,15 +78,16 @@ export function ArtisansTray() {
         {/* Filter Bar & Controls Container */}
         <div className="bg-stone/50 p-6 rounded-3xl border border-stone shadow-sm mb-12 space-y-6">
           
-          {/* Row 1: Search & Sort */}
+          {/* Row 1: Search and Sort */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            
             {/* Search Input */}
-            <div className="relative w-full sm:w-80">
+            <div className="relative w-full sm:max-w-xs">
               <input
                 type="text"
-                placeholder="Search by material (e.g., cowrie, wood, pearl)..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search by shell, wood, gold..."
                 className="w-full bg-linen pl-10 pr-4 py-2.5 rounded-xl border border-stone text-xs text-earth placeholder-wood/50 focus:outline-none focus:border-wood transition-colors"
               />
               <span className="absolute left-3.5 top-3 text-wood/60 text-sm">🔍</span>
@@ -100,7 +101,7 @@ export function ArtisansTray() {
               )}
             </div>
 
-            {/* Sort Dropdown */}
+            {/* Sort Dropdown (Removed price-tier €8+ / €30 summaries) */}
             <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
               <span className="text-xs font-medium text-wood">Sort by:</span>
               <select
@@ -108,10 +109,10 @@ export function ArtisansTray() {
                 onChange={(e) => setSortBy(e.target.value as any)}
                 className="bg-linen px-3 py-2 rounded-xl border border-stone text-xs font-medium text-earth focus:outline-none cursor-pointer"
               >
-                <option value="featured">✨ Featured Craft</option>
-                <option value="price-asc">Price: Low to High (€8+)</option>
-                <option value="price-desc">Price: High to Low (€30)</option>
-                <option value="rating">⭐ Customer Rating</option>
+                <option value="featured">Featured Craft</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
               </select>
             </div>
           </div>
@@ -132,7 +133,7 @@ export function ArtisansTray() {
                       : 'bg-linen hover:bg-stone text-wood border border-stone'
                   }`}
                 >
-                  {demo === 'All' ? '✨ All Audiences' : demo}
+                  {demo === 'All' ? 'All Audiences' : demo}
                 </button>
               ))}
             </div>
@@ -154,7 +155,7 @@ export function ArtisansTray() {
                       : 'bg-linen hover:bg-stone text-wood border border-stone'
                   }`}
                 >
-                  {cat === 'All' ? '🌿 Entire Tray (All Categories)' : cat}
+                  {cat === 'All' ? 'Entire Tray (All Categories)' : cat}
                 </button>
               ))}
             </div>
@@ -243,12 +244,12 @@ function ProductCard({
           />
           {product.isNew && (
             <span className="absolute top-3 left-3 bg-olive text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
-              ✨ New Craft
+              New Craft
             </span>
           )}
           {product.isFeatured && !product.isNew && (
             <span className="absolute top-3 left-3 bg-linen/90 backdrop-blur-md text-wood text-[10px] font-bold px-2.5 py-1 rounded-full border border-stone shadow-2xs">
-              🌿 1998 Favorite
+              1998 Favorite
             </span>
           )}
           <div className="absolute bottom-3 right-3 bg-earth/80 backdrop-blur-md text-linen font-mono font-bold text-xs px-2.5 py-1 rounded-full shadow-md">
@@ -295,7 +296,7 @@ function ProductCard({
           onClick={onAdd}
           className="flex-1 py-2.5 bg-wood hover:bg-gold hover:text-earth text-linen font-bold text-xs tracking-wider uppercase rounded-xl transition-all duration-200 shadow-2xs flex items-center justify-center gap-1.5 cursor-pointer"
         >
-          <span>🛍️ Add to Tray</span>
+          <span>Add to Tray</span>
         </button>
         <button
           onClick={onSelect}

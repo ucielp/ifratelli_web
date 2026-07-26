@@ -35,10 +35,10 @@ export function EventCalendar() {
     <section id="events" className="py-24 bg-linen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Header (Clean & Professional without decorative emojis) */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
           <span className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-olive/10 px-3.5 py-1.5 rounded-full">
-            🎪 Fairs &amp; Pop-Up Stalls • 2026 Season
+            Fairs &amp; Pop-Up Stalls • 2026 Season
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight">
             Meet Caro &amp; María in Person
@@ -59,7 +59,7 @@ export function EventCalendar() {
                     : 'bg-stone/50 hover:bg-stone text-wood border border-stone'
                 }`}
               >
-                {city === 'All' ? '✨ All Mediterranean Fairs' : `📍 ${city}`}
+                {city === 'All' ? 'All Mediterranean Fairs' : city}
               </button>
             ))}
           </div>
@@ -94,10 +94,10 @@ export function EventCalendar() {
 
                     <div className="flex flex-col items-end gap-1">
                       <span className="bg-wood text-linen text-[11px] font-bold px-3 py-1 rounded-full tracking-wide">
-                        📍 {fair.city}
+                        {fair.city}
                       </span>
                       <span className="text-[11px] font-mono text-wood/80 font-medium">
-                        ⏰ {fair.timeStr}
+                        {fair.timeStr}
                       </span>
                     </div>
                   </div>
@@ -121,7 +121,7 @@ export function EventCalendar() {
                 {/* Bottom CTA */}
                 <div className="pt-6 mt-6 border-t border-stone/80 flex items-center justify-between text-xs">
                   <span className="text-wood/70 italic font-medium">
-                    ✨ Free custom sizing &amp; adjustments on site
+                    Free custom sizing &amp; adjustments on site
                   </span>
                   <a
                     href={`https://maps.google.com/?q=${encodeURIComponent(`${fair.title} ${fair.location} ${fair.city}`)}`}
@@ -140,7 +140,7 @@ export function EventCalendar() {
         {/* Note on Vercel timezone safety */}
         <div className="mt-12 text-center">
           <p className="text-[11px] font-mono text-wood/60 max-w-lg mx-auto bg-stone/40 p-3 rounded-xl border border-stone">
-            ⚙️ Technical Note: Date strings are parsed locally via safe integer construction to ensure zero timezone shifting across global deployments.
+            Technical Note: Date strings are parsed locally via safe integer construction to ensure zero timezone shifting across global deployments.
           </p>
         </div>
 

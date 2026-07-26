@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ShopProvider } from "@/context/ShopContext";
 
@@ -30,6 +31,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Hardcoded default G-EC3YDPD502 with environment variable override support
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-EC3YDPD502";
+
   return (
     <html
       lang="en"
@@ -39,6 +43,9 @@ export default function RootLayout({
         <ShopProvider>
           {children}
         </ShopProvider>
+
+        {/* Google Analytics Tag (gtag.js) for stream G-EC3YDPD502 */}
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

@@ -5,9 +5,31 @@ import Image from 'next/image';
 
 export function BrandStory() {
   return (
-    <section id="story" className="py-24 bg-stone/40 border-t border-b border-stone">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="story" className="py-24 bg-stone/40 border-t border-b border-stone relative overflow-hidden">
+      
+      {/* Background Subtle Watermark Logo */}
+      <div className="absolute -right-20 -top-20 w-96 h-96 opacity-5 pointer-events-none">
+        <Image src="/ifratelli_logo.svg" alt="watermark" fill className="object-contain" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Prominent Brand Logo Header in Our Story Section */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="relative w-64 sm:w-80 h-16 sm:h-20 mx-auto">
+            <Image
+              src="/ifratelli_logo.svg"
+              alt="ifratelli accesorios logo"
+              fill
+              sizes="320px"
+              className="object-contain"
+            />
+          </div>
+          <p className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-linen px-4 py-1.5 rounded-full inline-block border border-stone">
+            Our Family Heritage • Est. Rosario 1998
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left: Founders Portrait */}
@@ -17,10 +39,10 @@ export function BrandStory() {
                 src="/foundrs.jpg"
                 alt="Founders Caro and María in their artisan workshop"
                 fill
-                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-earth/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-linen space-y-1">
                 <span className="bg-gold text-earth font-mono font-bold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">
                   Rosario • 1998
@@ -32,7 +54,7 @@ export function BrandStory() {
               </div>
             </div>
 
-            {/* Decorative stamp */}
+            {/* Decorative heritage stamp */}
             <div className="absolute -top-6 -right-6 bg-linen p-4 rounded-2xl border border-stone shadow-lg hidden sm:block rotate-6">
               <p className="font-serif font-bold text-sm text-earth">ifratelli</p>
               <p className="text-[10px] font-mono text-olive font-semibold">28+ YEARS OF CRAFT</p>
@@ -41,9 +63,8 @@ export function BrandStory() {
 
           {/* Right: The Narrative */}
           <div className="lg:col-span-6 space-y-6 text-wood">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-linen border border-stone text-xs font-bold tracking-wider uppercase text-olive">
-              <span>🌿</span>
-              <span>Our Family Heritage</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-linen border border-stone text-xs font-bold tracking-wider uppercase text-olive">
+              <span>Authentic Mediterranean Craftsmanship</span>
             </div>
 
             <h2 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight leading-tight">
@@ -58,7 +79,7 @@ export function BrandStory() {
                 The brand name <em className="font-serif font-bold text-earth">&quot;ifratelli&quot;</em> (meaning siblings or brothers) is a heartfelt tribute to their enduring family bond. What started around a family table in Argentina has blossomed across the Mediterranean—now operating out of sunlit workshops in <strong className="text-earth">Mallorca and El Masnou, Spain</strong>.
               </p>
               <p>
-                Whether displayed on light bamboo stands in local clothing fairs or wrapped in raw linen for our online customers, every piece is designed to offer authentic, accessible luxury that feels as warm as the Spanish coast.
+                Whether displayed on light bamboo stands in local coastal markets or wrapped in raw linen for our online customers, every creation is assembled by hand to deliver authentic Mediterranean quality that feels as timeless and warm as the Spanish coast.
               </p>
             </div>
 

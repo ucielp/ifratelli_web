@@ -6,160 +6,134 @@ import { useShop } from '@/context/ShopContext';
 import { MOCK_PRODUCTS } from '@/lib/mock-data';
 
 export function Hero() {
-  const { addToCart, setSelectedProduct } = useShop();
-  const featuredProduct = MOCK_PRODUCTS[0]; // Rosario Sunlit Cowrie Necklace
-
-  const scrollToCatalog = () => {
-    const el = document.getElementById('catalog');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
+  const { setSelectedProduct, addToCart } = useShop();
+  
+  // Featured hero piece: item-01 (1998 Heritage Cowrie Necklace)
+  const featuredPiece = MOCK_PRODUCTS[0];
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-linen via-linen to-stone/30 border-b border-stone">
-      {/* Subtle organic background elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-olive/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-stone/40 via-linen to-linen">
+      
+      {/* Background Decorative Elements */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -right-32 w-96 h-96 bg-olive/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Column: Thesis & Story Headline */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone/80 border border-wood/20 text-wood text-xs font-semibold tracking-wider uppercase shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
-              <span>Handcrafted in Mallorca &amp; El Masnou</span>
+          {/* Left Column: The 1998 Thesis & Heritage */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone/70 border border-stone text-xs font-semibold tracking-wider text-earth uppercase animate-fadeIn">
+              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+              <span>Born in Rosario 1998 • Crafted in El Masnou &amp; Mallorca</span>
             </div>
 
-            <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl font-light text-earth leading-[1.05] tracking-tight">
-              From Rosario to <br className="hidden sm:inline" />
-              <span className="font-bold italic text-wood bg-gradient-to-r from-wood via-olive to-wood bg-clip-text">
-                the Mediterranean
-              </span> since 1998.
+            <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-earth leading-[1.08]">
+              Tactile Warmth of the <span className="italic font-bold bg-gradient-to-r from-wood via-earth to-olive bg-clip-text text-transparent">Mediterranean</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-wood/80 max-w-xl font-normal leading-relaxed">
-              Sisters Caro &amp; María blend artisanal family heritage with sunlit organic textures. Raw olive wood, authentic cowrie shells, woven linen, and warm gold—accessible luxury designed to touch the soul.
+            <p className="text-base sm:text-lg text-wood font-sans font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              When sisters <strong className="text-earth font-semibold">Caro</strong> and <strong className="text-earth font-semibold">María</strong> began crafting jewelry at ages 15 and 8 in Rosario, Argentina, they learned their mother&apos;s secret: authentic Mediterranean quality is felt in the weight of natural cowrie shells, smooth Mallorca olive wood, and raw cotton cords.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <button
-                onClick={scrollToCatalog}
-                className="px-8 py-4 bg-wood hover:bg-earth text-linen font-medium rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 text-sm tracking-wide cursor-pointer flex items-center gap-2 group"
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a
+                href="#catalog"
+                className="w-full sm:w-auto px-8 py-4 bg-wood hover:bg-gold hover:text-earth text-linen font-bold text-xs uppercase tracking-widest rounded-2xl transition-all duration-300 shadow-md hover:shadow-xl text-center cursor-pointer transform hover:-translate-y-0.5"
               >
-                <span>Explore The Artisan&apos;s Tray</span>
-                <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </button>
-
+                Explore The Tray &rarr;
+              </a>
               <a
                 href="#story"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('story')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                className="px-6 py-4 bg-stone/70 hover:bg-stone text-wood font-medium rounded-2xl transition-all duration-200 text-sm border border-wood/10"
+                className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-stone/50 text-earth font-bold text-xs uppercase tracking-widest rounded-2xl border-2 border-stone transition-all duration-300 text-center cursor-pointer"
               >
-                Read Our Story (1998)
+                Our 28-Year Story
               </a>
             </div>
 
-            {/* Quick trust badges */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-stone/80 max-w-lg text-wood">
+            {/* Micro-badges */}
+            <div className="pt-8 border-t border-stone/80 grid grid-cols-3 gap-4 text-center lg:text-left text-xs text-wood font-medium">
               <div>
-                <p className="font-serif font-bold text-lg text-earth">€8 – €30</p>
-                <p className="text-xs text-wood/70 font-medium">Accessible Luxury</p>
+                <span className="block font-serif text-lg font-bold text-earth">Free Shipping</span>
+                <span className="text-[11px] opacity-80">On orders over €60</span>
               </div>
               <div>
-                <p className="font-serif font-bold text-lg text-gold">FREE &gt; €60</p>
-                <p className="text-xs text-wood/70 font-medium">Mallorca &amp; BCN Shipping</p>
+                <span className="block font-serif text-lg font-bold text-earth">Custom Sizing</span>
+                <span className="text-[11px] opacity-80">Free adjustments</span>
               </div>
               <div>
-                <p className="font-serif font-bold text-lg text-olive">100% Raw</p>
-                <p className="text-xs text-wood/70 font-medium">Natural Materials</p>
+                <span className="block font-serif text-lg font-bold text-earth">Weekly Fairs</span>
+                <span className="text-[11px] opacity-80">Mallorca &amp; El Masnou</span>
               </div>
             </div>
+
           </div>
 
-          {/* Right Column: Featured Artisan Card ("The Tray" Preview) */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+          {/* Right Column: Featured Heritage Piece */}
+          <div className="lg:col-span-5 relative flex justify-center">
+            
+            <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-linen bg-stone/50 group">
+              <Image
+                src={featuredPiece.image}
+                alt={featuredPiece.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-earth/80 via-transparent to-transparent opacity-90" />
               
-              {/* Main Photo Card with Cowrie Shell Rounding */}
-              <div className="bg-linen p-4 sm:p-6 rounded-3xl border-2 border-stone shadow-xl transform rotate-1 hover:rotate-0 transition-all duration-500 group">
+              {/* Overlay Content */}
+              <div className="absolute bottom-6 left-6 right-6 text-linen space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="bg-gold text-earth text-[10px] font-mono font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Featured 1998 Heritage Piece
+                  </span>
+                  <span className="font-mono text-lg font-bold text-gold">
+                    €{featuredPiece.price.toFixed(2)}
+                  </span>
+                </div>
                 
-                <div className="relative aspect-4/5 w-full rounded-2xl overflow-hidden bg-stone/40 mb-5">
-                  <Image
-                    src={featuredProduct.image}
-                    alt={featuredProduct.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    priority
-                  />
-                  <div className="absolute top-3 left-3 bg-linen/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-wood shadow-sm border border-stone">
-                    ✨ Featured 1998 Piece
-                  </div>
-                  <div className="absolute bottom-3 right-3 bg-earth/80 backdrop-blur-md text-linen px-3 py-1 rounded-full text-sm font-mono font-bold shadow-md">
-                    €{featuredProduct.price.toFixed(2)}
-                  </div>
-                </div>
+                <h3 className="font-serif text-2xl font-bold">
+                  {featuredPiece.name}
+                </h3>
+                
+                <p className="text-xs text-linen/80 line-clamp-2">
+                  {featuredPiece.description}
+                </p>
 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-wider font-bold text-olive">
-                      {featuredProduct.category} • {featuredProduct.demographic.join(' / ')}
-                    </span>
-                    <span className="text-xs text-wood/70 font-medium">⭐ {featuredProduct.rating}</span>
-                  </div>
-
-                  <h3 
-                    onClick={() => setSelectedProduct(featuredProduct)}
-                    className="font-serif text-2xl font-bold text-earth cursor-pointer hover:text-gold transition-colors"
+                <div className="pt-2 flex gap-2">
+                  <button
+                    onClick={() => setSelectedProduct(featuredPiece)}
+                    className="flex-1 py-2.5 bg-linen/20 hover:bg-linen/30 backdrop-blur-md text-linen rounded-xl text-xs font-bold transition-colors cursor-pointer border border-linen/30"
                   >
-                    {featuredProduct.name}
-                  </h3>
-
-                  <p className="text-xs text-wood/80 line-clamp-2 leading-relaxed">
-                    {featuredProduct.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {featuredProduct.materials.map((mat, i) => (
-                      <span key={i} className="text-[10px] bg-stone/70 text-wood px-2 py-0.5 rounded-md border border-stone">
-                        {mat}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="pt-3 flex gap-2">
-                    <button
-                      onClick={() => addToCart(featuredProduct)}
-                      className="flex-1 py-3 bg-wood hover:bg-gold hover:text-earth text-linen font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-200 shadow-sm flex items-center justify-center gap-2 cursor-pointer"
-                    >
-                      <span>🛍️ Add to Tray</span>
-                    </button>
-                    <button
-                      onClick={() => setSelectedProduct(featuredProduct)}
-                      className="px-4 py-3 bg-stone hover:bg-stone/80 text-wood font-medium text-xs rounded-xl transition-colors"
-                    >
-                      Inspect &rarr;
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Decorative floating badge */}
-              <div className="absolute -bottom-6 -left-6 bg-glass-card p-4 rounded-2xl border border-stone shadow-lg hidden sm:flex items-center gap-3 max-w-xs animate-float">
-                <div className="w-10 h-10 rounded-full bg-olive/20 flex items-center justify-center text-xl shrink-0">
-                  🌿
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-earth">Sisters Caro &amp; María</p>
-                  <p className="text-[11px] text-wood/80">Handmade with love for 28+ years</p>
+                    Inspect Craftsmanship
+                  </button>
+                  <button
+                    onClick={() => addToCart(featuredPiece, 1)}
+                    className="px-4 py-2.5 bg-gold hover:bg-white text-earth font-bold text-xs rounded-xl transition-all shadow-md cursor-pointer"
+                  >
+                    + Add to Tray
+                  </button>
                 </div>
               </div>
 
+              {/* Top Right Tag */}
+              <div className="absolute top-4 right-4 bg-linen/90 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-wood shadow-sm border border-stone">
+                100% Authentic Handcraft
+              </div>
             </div>
+
+            {/* Floating badge */}
+            <div className="absolute -bottom-6 -left-6 bg-linen p-4 rounded-2xl shadow-xl border border-stone hidden sm:flex items-center gap-3 animate-float">
+              <span className="text-2xl">🐚</span>
+              <div>
+                <p className="font-bold text-xs text-earth">El Masnou Studio</p>
+                <p className="text-[10px] text-wood/80 font-mono">Ready for custom orders</p>
+              </div>
+            </div>
+
           </div>
 
         </div>

@@ -16,7 +16,7 @@ export function ChatbotModal() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       sender: 'bot',
-      text: '¡Hola! 🌿 Welcome to ifratelli accesorios. I am your automated artisan assistant, trained by sisters Caro and María. How can I help you today?',
+      text: '¡Hola! Welcome to ifratelli accesorios. I am your automated artisan assistant, trained by sisters Caro and María. How can I help you today?',
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -71,7 +71,7 @@ export function ChatbotModal() {
         title="Open Artisan Chat Assistant"
       >
         <div className="relative w-7 h-7">
-          <Image src="/icons/whatsapp.png" alt="Chat" fill className="object-contain" />
+          <Image src="/icons/whatsapp.png" alt="Chat" fill sizes="28px" className="object-contain" />
         </div>
         <span className="hidden sm:inline font-bold text-xs pr-1 font-sans">
           Ask the Sisters
@@ -87,14 +87,14 @@ export function ChatbotModal() {
           <div className="p-4 bg-wood text-linen flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="relative w-8 h-8 rounded-full bg-linen p-1 shrink-0">
-                <Image src="/icons/whatsapp.png" alt="Bot" fill className="object-contain p-0.5" />
+                <Image src="/icons/whatsapp.png" alt="Bot" fill sizes="32px" className="object-contain p-0.5" />
               </div>
               <div>
                 <h3 className="font-serif font-bold text-base leading-tight">
                   ifratelli Artisan Bot
                 </h3>
                 <p className="text-[10px] text-linen/80 font-mono">
-                  🟢 Online • Trained by Caro &amp; María
+                  Online • Trained by Caro &amp; María
                 </p>
               </div>
             </div>
@@ -132,7 +132,7 @@ export function ChatbotModal() {
           {/* Clickable FAQ Pills */}
           <div className="p-3 bg-stone/40 border-t border-b border-stone/80 overflow-x-auto">
             <p className="text-[10px] font-bold uppercase tracking-wider text-wood/70 mb-1.5 px-1">
-              ✨ Click a frequent question:
+              Click a frequent question:
             </p>
             <div className="flex flex-wrap gap-1.5">
               {MOCK_FAQS.map((faq) => (
@@ -147,7 +147,7 @@ export function ChatbotModal() {
             </div>
           </div>
 
-          {/* Custom Input & WhatsApp fallback */}
+          {/* Custom Input & WhatsApp fallback with official number +34 623 99 37 45 */}
           <div className="p-3 bg-linen space-y-2">
             <form onSubmit={handleSendCustom} className="flex gap-2">
               <input
@@ -166,12 +166,12 @@ export function ChatbotModal() {
             </form>
 
             <a
-              href="https://wa.me/34600199800?text=Hola%20Caro%20y%20María!%20Vengo%20de%20la%20web%20ifratelli."
+              href="https://wa.me/34623993745?text=Hola%20Caro%20y%20María!%20Vengo%20de%20la%20web%20ifratelli."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-2 bg-olive hover:bg-olive/90 text-white text-[11px] font-bold rounded-xl flex items-center justify-center gap-1.5 transition-colors shadow-2xs"
             >
-              <span>💬 Connect with Caro &amp; María on WhatsApp</span>
+              <span>Connect on WhatsApp (+34 623 99 37 45)</span>
               <span>&rarr;</span>
             </a>
           </div>

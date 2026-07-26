@@ -19,7 +19,7 @@ export function AuthModal() {
         <div className="p-6 border-b border-stone bg-stone/30 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="relative w-7 h-7">
-              <Image src="/icons/user.png" alt="User" fill className="object-contain" />
+              <Image src="/icons/user.png" alt="User" fill sizes="28px" className="object-contain" />
             </div>
             <div>
               <h2 className="font-serif text-2xl font-bold text-earth">
@@ -52,14 +52,14 @@ export function AuthModal() {
                 <div>
                   <h3 className="font-bold text-earth text-base">{user.name}</h3>
                   <p className="text-xs text-wood/80 font-mono">{user.email}</p>
-                  <p className="text-xs text-olive font-semibold mt-0.5">✨ Phase 1 Verified Client</p>
+                  <p className="text-xs text-olive font-semibold mt-0.5">Phase 1 Verified Client</p>
                 </div>
               </div>
 
               {/* Saved Addresses */}
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-earth flex items-center gap-1.5">
-                  <span>📍</span> Saved Addresses ({user.addresses.length}):
+                  <span>Saved Addresses ({user.addresses.length}):</span>
                 </h4>
                 <div className="space-y-2">
                   {user.addresses.map((addr) => (
@@ -74,7 +74,7 @@ export function AuthModal() {
               {/* Order History */}
               <div className="space-y-2">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-earth flex items-center gap-1.5">
-                  <span>🛍️</span> Recent Orders ({user.orders.length}):
+                  <span>Recent Orders ({user.orders.length}):</span>
                 </h4>
                 <div className="space-y-2 max-h-48 overflow-y-auto">
                   {user.orders.length === 0 ? (
@@ -120,7 +120,7 @@ export function AuthModal() {
               className="space-y-5"
             >
               <div className="bg-linen p-4 rounded-2xl border border-stone text-xs text-wood/90 space-y-2 leading-relaxed">
-                <p className="font-bold text-earth">✨ Simulated Phase 1 Access</p>
+                <p className="font-bold text-earth">Simulated Phase 1 Access</p>
                 <p>
                   As requested, we have pre-configured a mock customer account so you can test viewing saved addresses in El Masnou and Mallorca immediately!
                 </p>
@@ -136,7 +136,7 @@ export function AuthModal() {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="your.email@example.com"
-                  className="w-full bg-linen px-4 py-3 rounded-xl border border-stone text-xs text-earth focus:outline-none focus:border-wood"
+                  className="w-full bg-linen px-3.5 py-2.5 rounded-xl border border-stone text-xs text-earth focus:outline-none focus:border-wood"
                 />
               </div>
 
@@ -144,7 +144,7 @@ export function AuthModal() {
                 type="submit"
                 className="w-full py-4 bg-wood hover:bg-gold hover:text-earth text-linen font-bold text-xs tracking-wider uppercase rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>✨ Sign In to Account</span>
+                <span>Sign In to Account</span>
                 <span>&rarr;</span>
               </button>
             </form>
