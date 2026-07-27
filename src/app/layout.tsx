@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { ShopProvider } from "@/context/ShopContext";
+import { AppShell } from "@/components/layout/AppShell";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -19,8 +20,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "ifratelli accesorios • Handcrafted Mediterranean Jewelry Since 1998",
-  description: "Handcrafted necklaces, bracelets, earrings, anklets, and eyeglass holders by sisters Caro & María. Rooted in Rosario 1998, flourishing in El Masnou and Mallorca.",
+  title: "ifratelli accesorios • Handmade Jewelry Since 1998",
+  description: "Handmade necklaces, bracelets, earrings, anklets, and eyeglass holders by sisters Caro and María. Made in Mallorca and El Masnou, Spain.",
   icons: {
     icon: "/ifratelli_logo.svg",
   },
@@ -41,7 +42,9 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-linen text-earth font-sans selection:bg-gold/30 selection:text-earth">
         <ShopProvider>
-          {children}
+          <AppShell>
+            {children}
+          </AppShell>
         </ShopProvider>
 
         {/* Google Analytics Tag (gtag.js) for stream G-EC3YDPD502 */}

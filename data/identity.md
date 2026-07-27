@@ -21,3 +21,9 @@
 * **Aesthetic Focus:** Mediterranean, organic, warm, effortless, and highly aesthetic.
 * **Color Palette:** Earth tones including warm wood browns, stone greys, and natural greens, heavily accented with warm metals (gold).
 * **Textures & Photography:** Displays utilize natural elements like light bamboo/wood, soft linen backdrops, and organic props (e.g., cowrie shells, metal fish charms) to emphasize the classic, handmade nature of the jewelry.
+
+## 5. Copywriting & Tone of Voice
+*   **Vibe:** Relaxed, simple, authentic, and direct. Treat the copy as if Caro or María is having a casual, friendly chat with a customer at a local market.
+*   **Strict Rule (Anti-Jargon):** Absolutely NO dense, poetic, or dramatic marketing jargon. (e.g., Do NOT use phrases like "Tactile Warmth of the Mediterranean" or "Curated from Natural Earth & Sea").
+*   **Product Naming:** Keep names literal and straightforward. (e.g., Use "Cowrie Shell Necklace" instead of "Rosario Sunlit Cowrie Necklace").
+*   **Product Descriptions:** Keep them to 1-2 short, factual sentences focusing on the materials and the simple joy of the piece. Do not over-explain.

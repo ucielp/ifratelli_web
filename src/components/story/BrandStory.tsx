@@ -5,18 +5,12 @@ import Image from 'next/image';
 
 export function BrandStory() {
   return (
-    <section id="story" className="py-24 bg-stone/40 border-t border-b border-stone relative overflow-hidden">
-      
-      {/* Background Subtle Watermark Logo */}
-      <div className="absolute -right-20 -top-20 w-96 h-96 opacity-5 pointer-events-none">
-        <Image src="/ifratelli_logo.svg" alt="watermark" fill className="object-contain" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="story" className="py-20 bg-linen">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Prominent Brand Logo Header in Our Story Section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="relative w-64 sm:w-80 h-16 sm:h-20 mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+          <div className="relative w-72 sm:w-80 h-16 sm:h-20 mx-auto">
             <Image
               src="/ifratelli_logo.svg"
               alt="ifratelli accesorios logo"
@@ -25,8 +19,8 @@ export function BrandStory() {
               className="object-contain"
             />
           </div>
-          <p className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-linen px-4 py-1.5 rounded-full inline-block border border-stone">
-            Our Family Heritage • Est. Rosario 1998
+          <p className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-stone/40 px-4 py-1 rounded-full inline-block border border-stone">
+            Est. Rosario 1998
           </p>
         </div>
 
@@ -34,10 +28,10 @@ export function BrandStory() {
           
           {/* Left: Founders Portrait */}
           <div className="lg:col-span-6 relative">
-            <div className="relative mx-auto max-w-md lg:max-w-none aspect-4/3 sm:aspect-16/10 rounded-3xl overflow-hidden shadow-2xl border-4 border-linen bg-stone transform -rotate-1 hover:rotate-0 transition-transform duration-700">
+            <div className="relative mx-auto max-w-md lg:max-w-none aspect-4/3 sm:aspect-16/10 rounded-3xl overflow-hidden shadow-xl border-2 border-stone bg-stone">
               <Image
                 src="/foundrs.jpg"
-                alt="Founders Caro and María in their artisan workshop"
+                alt="Founders Caro and María in their workshop"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
@@ -49,53 +43,53 @@ export function BrandStory() {
                 </span>
                 <p className="font-serif text-2xl font-bold">Sisters Caro &amp; María</p>
                 <p className="text-xs opacity-90 font-sans">
-                  Continuing their mother&apos;s passion for tactile materials and warm community.
+                  Making jewelry together for over 28 years.
                 </p>
               </div>
             </div>
 
-            {/* Decorative heritage stamp */}
-            <div className="absolute -top-6 -right-6 bg-linen p-4 rounded-2xl border border-stone shadow-lg hidden sm:block rotate-6">
+            {/* Decorative stamp */}
+            <div className="absolute -top-6 -right-6 bg-linen p-4 rounded-2xl border border-stone shadow-md hidden sm:block rotate-6">
               <p className="font-serif font-bold text-sm text-earth">ifratelli</p>
-              <p className="text-[10px] font-mono text-olive font-semibold">28+ YEARS OF CRAFT</p>
+              <p className="text-[10px] font-mono text-olive font-semibold">EST. 1998</p>
             </div>
           </div>
 
           {/* Right: The Narrative */}
           <div className="lg:col-span-6 space-y-6 text-wood">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-linen border border-stone text-xs font-bold tracking-wider uppercase text-olive">
-              <span>Authentic Mediterranean Craftsmanship</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-stone/40 border border-stone text-xs font-bold tracking-wider uppercase text-olive">
+              <span>Sisters &amp; Founders</span>
             </div>
 
-            <h2 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight leading-tight">
-              A Sisterhood Woven in <span className="italic font-bold bg-gradient-to-r from-wood to-olive bg-clip-text text-transparent">Raw Earth</span>
-            </h2>
+            <h1 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight leading-tight">
+              Our Story
+            </h1>
 
             <div className="space-y-4 text-sm sm:text-base leading-relaxed text-wood/90">
               <p>
-                The story of <strong className="text-earth font-bold">ifratelli accesorios</strong> began in 1998 in Rosario, Argentina. Inspired and mentored by their mother, <strong className="text-earth">Caro</strong> took up the craft at just 15 years old, while younger sister <strong className="text-earth">María</strong> began helping at age 8.
+                We are sisters <strong className="text-earth font-bold">Caro</strong> and <strong className="text-earth font-bold">María</strong>. We started making jewelry together in Rosario, Argentina back in 1998 when Caro was 15 and María was 8, learning from our mother around the kitchen table.
               </p>
               <p>
-                The brand name <em className="font-serif font-bold text-earth">&quot;ifratelli&quot;</em> (meaning siblings or brothers) is a heartfelt tribute to their enduring family bond. What started around a family table in Argentina has blossomed across the Mediterranean—now operating out of sunlit workshops in <strong className="text-earth">Mallorca and El Masnou, Spain</strong>.
+                The name <em className="font-serif font-bold text-earth">&quot;ifratelli&quot;</em> means siblings or brothers, celebrating our family roots and bond. Over the years, our workshop moved from Argentina to Spain. Now we design and make all our pieces by hand in our studios in <strong className="text-earth">Mallorca and El Masnou, Barcelona</strong>.
               </p>
               <p>
-                Whether displayed on light bamboo stands in local coastal markets or wrapped in raw linen for our online customers, every creation is assembled by hand to deliver authentic Mediterranean quality that feels as timeless and warm as the Spanish coast.
+                We sell our jewelry at local weekend markets and here online. Every piece is assembled by us using natural shells, wood, freshwater pearls, and durable cords. If you ever need a custom size or adjustment, just let us know!
               </p>
             </div>
 
             {/* Highlights Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-stone/80 text-xs">
-              <div className="bg-linen p-3.5 rounded-2xl border border-stone">
+              <div className="bg-stone/30 p-3.5 rounded-2xl border border-stone">
                 <p className="font-bold text-earth text-sm font-serif">Rosario, 1998</p>
-                <p className="text-wood/70 mt-0.5">Where our mother taught us the first knot.</p>
+                <p className="text-wood/70 mt-0.5">Where we started making jewelry at home.</p>
               </div>
-              <div className="bg-linen p-3.5 rounded-2xl border border-stone">
+              <div className="bg-stone/30 p-3.5 rounded-2xl border border-stone">
                 <p className="font-bold text-earth text-sm font-serif">El Masnou</p>
-                <p className="text-wood/70 mt-0.5">Our permanent Barcelona area studio &amp; market.</p>
+                <p className="text-wood/70 mt-0.5">Our Barcelona area workshop and market stall.</p>
               </div>
-              <div className="bg-linen p-3.5 rounded-2xl border border-stone col-span-2 sm:col-span-1">
-                <p className="font-bold text-earth text-sm font-serif">Mallorca Fairs</p>
-                <p className="text-wood/70 mt-0.5">Summer artisan pop-ups across the island.</p>
+              <div className="bg-stone/30 p-3.5 rounded-2xl border border-stone col-span-2 sm:col-span-1">
+                <p className="font-bold text-earth text-sm font-serif">Mallorca</p>
+                <p className="text-wood/70 mt-0.5">Our island workshop and summer markets.</p>
               </div>
             </div>
 

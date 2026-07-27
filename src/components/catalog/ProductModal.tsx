@@ -38,19 +38,19 @@ export function ProductModal() {
           <div className="absolute top-6 left-6 flex flex-col gap-2">
             {selectedProduct.isNew && (
               <span className="bg-olive text-white text-xs font-bold px-3 py-1 rounded-full shadow-md self-start">
-                New Craft
+                New
               </span>
             )}
             {selectedProduct.isFeatured && (
               <span className="bg-linen/90 backdrop-blur-md text-wood text-xs font-bold px-3 py-1 rounded-full border border-stone shadow-md self-start">
-                1998 Favorite
+                Popular
               </span>
             )}
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 bg-earth/80 backdrop-blur-md text-linen p-3 rounded-2xl flex items-center justify-between text-xs font-mono">
-            <span>100% Authentic Handcraft</span>
-            <span>Est. Rosario 1998</span>
+            <span>Made in Spain</span>
+            <span>Since 1998</span>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export function ProductModal() {
             {/* Materials List */}
             <div className="space-y-2 pt-2">
               <h4 className="text-xs font-bold uppercase tracking-wider text-earth">
-                Tactile Materials:
+                Materials:
               </h4>
               <div className="flex flex-wrap gap-2">
                 {selectedProduct.materials.map((mat, idx) => (
@@ -97,9 +97,9 @@ export function ProductModal() {
 
             {/* Artisan Guarantee Box */}
             <div className="p-4 bg-stone/30 rounded-2xl border border-stone/80 text-xs space-y-1 text-wood">
-              <p className="font-bold text-earth">Caro &amp; María&apos;s Guarantee</p>
+              <p className="font-bold text-earth">Custom Sizing</p>
               <p className="text-wood/80 leading-relaxed">
-                Need a longer cotton cord or custom clasp? We adjust sizing for free before shipping from El Masnou or at our weekly Mallorca fairs.
+                Need a longer cord or adjustment? Leave a note at checkout or ask us at any market stall and we will adjust the size for free.
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@ export function ProductModal() {
               }}
               className="w-full py-4 bg-wood hover:bg-gold hover:text-earth text-linen font-bold text-xs tracking-wider uppercase rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
-              <span>Add to Tray (€{selectedProduct.price.toFixed(2)})</span>
+              <span>Add to Cart (€{selectedProduct.price.toFixed(2)})</span>
               <span>&rarr;</span>
             </button>
             <button

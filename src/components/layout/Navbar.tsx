@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useShop } from '@/context/ShopContext';
 
 export function Navbar() {
@@ -20,81 +21,68 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-panel py-3 shadow-sm'
-          : 'bg-transparent py-5'
+          ? 'glass-panel py-3 shadow-xs'
+          : 'bg-linen/90 backdrop-blur-md py-4 border-b border-stone/60'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Prominently Displayed Brand Logo (Scaled up per instructions) */}
-        <div 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        {/* Prominently Displayed Brand Logo */}
+        <Link 
+          href="/"
           className="cursor-pointer flex items-center gap-3 group"
         >
-          <div className="relative w-56 sm:w-72 h-14 sm:h-16 transition-transform group-hover:scale-102">
+          <div className="relative w-56 sm:w-64 h-12 sm:h-14 transition-transform group-hover:scale-102">
             <Image
               src="/ifratelli_logo.svg"
               alt="ifratelli accesorios"
               fill
-              sizes="288px"
+              sizes="256px"
               className="object-contain object-left"
               priority
             />
           </div>
-          <span className="hidden xl:inline-block text-xs font-serif italic text-wood px-2.5 py-1 rounded bg-stone/50 border border-stone">
+          <span className="hidden lg:inline-block text-[11px] font-serif italic text-wood px-2.5 py-0.5 rounded bg-stone/50 border border-stone">
             Rosario 1998 • Mallorca
           </span>
-        </div>
+        </Link>
 
-        {/* Navigation Links (Clean & Professional without decorative emojis) */}
+        {/* Clean Route Navigation */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-wood">
-          <button
-            onClick={() => scrollTo('catalog')}
-            className="hover:text-gold transition-colors cursor-pointer tracking-wide uppercase text-xs font-semibold"
+          <Link
+            href="/"
+            className="hover:text-earth transition-colors cursor-pointer tracking-wide uppercase text-xs font-bold"
           >
-            The Artisan&apos;s Tray
-          </button>
-          <button
-            onClick={() => scrollTo('story')}
-            className="hover:text-gold transition-colors cursor-pointer tracking-wide uppercase text-xs font-semibold"
+            Shop
+          </Link>
+          <Link
+            href="/story"
+            className="hover:text-earth transition-colors cursor-pointer tracking-wide uppercase text-xs font-bold"
           >
             Our Story
-          </button>
-          <button
-            onClick={() => scrollTo('events')}
-            className="hover:text-gold transition-colors cursor-pointer tracking-wide uppercase text-xs font-semibold flex items-center gap-1.5"
+          </Link>
+          <Link
+            href="/fairs"
+            className="hover:text-earth transition-colors cursor-pointer tracking-wide uppercase text-xs font-bold flex items-center gap-1.5"
           >
-            Fairs &amp; Events
-            <span className="bg-olive text-white text-[10px] px-1.5 py-0.2 rounded-full uppercase tracking-wider font-bold">Live</span>
-          </button>
-          <button
-            onClick={() => scrollTo('instagram')}
-            className="hover:text-gold transition-colors cursor-pointer tracking-wide uppercase text-xs font-semibold"
-          >
-            Styling
-          </button>
+            Fairs &amp; Markets
+            <span className="bg-olive text-white text-[9px] px-1.5 py-0.5 rounded-full uppercase tracking-wider font-bold">Live</span>
+          </Link>
         </nav>
 
         {/* Custom UI Icons by Joaquín (age 10) */}
-        <div className="flex items-center gap-3 sm:gap-5">
-          {/* Search Trigger */}
-          <button
-            onClick={() => scrollTo('catalog')}
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Search Trigger (links to shop catalog) */}
+          <Link
+            href="/"
             className="p-2 hover:bg-stone/60 rounded-full transition-transform hover:scale-110 active:scale-95 cursor-pointer"
-            title="Search jewelry catalog"
+            title="Search jewelry collection"
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6">
               <Image
                 src="/icons/search.png"
                 alt="Search"
@@ -103,7 +91,7 @@ export function Navbar() {
                 className="object-contain"
               />
             </div>
-          </button>
+          </Link>
 
           {/* User Account / Profile (Joaquín's custom user.png) */}
           <button
@@ -111,7 +99,7 @@ export function Navbar() {
             className="p-2 hover:bg-stone/60 rounded-full transition-transform hover:scale-110 active:scale-95 relative flex items-center gap-1.5 cursor-pointer"
             title={user ? `Logged in as ${user.name}` : 'Sign In / Register'}
           >
-            <div className="relative w-6 h-6">
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6">
               <Image
                 src="/icons/user.png"
                 alt="User Profile"
@@ -130,10 +118,10 @@ export function Navbar() {
           {/* Cart Tray Button (Joaquín's custom shop.png) */}
           <button
             onClick={() => setIsCartOpen(true)}
-            className="relative p-2.5 bg-stone hover:bg-wood hover:text-linen text-wood rounded-2xl transition-all duration-300 flex items-center gap-2 shadow-sm hover:shadow-md group cursor-pointer"
+            className="relative px-3 py-2 bg-stone hover:bg-wood hover:text-linen text-wood rounded-2xl transition-all duration-300 flex items-center gap-2 shadow-2xs hover:shadow-md group cursor-pointer"
             title="Open Shopping Tray"
           >
-            <div className="relative w-6 h-6 transition-transform group-hover:scale-110">
+            <div className="relative w-5 h-5 sm:w-6 sm:h-6 transition-transform group-hover:scale-110">
               <Image
                 src="/icons/shop.png"
                 alt="Shopping Tray"

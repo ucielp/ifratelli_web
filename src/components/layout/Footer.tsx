@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Footer() {
   return (
@@ -23,12 +24,12 @@ export function Footer() {
               />
             </div>
             <p className="text-xs sm:text-sm text-stone/80 font-sans leading-relaxed">
-              Handcrafted Mediterranean jewelry born in Rosario, Argentina in 1998. Sisters Caro &amp; María continue their mother&apos;s legacy from sunlit workshops in El Masnou and Mallorca, Spain.
+              Handmade jewelry by sisters Caro and María. Started in Rosario, Argentina in 1998, now designed and crafted in Mallorca and El Masnou, Spain.
             </p>
             <div className="pt-2 flex items-center gap-3 text-xs text-gold font-mono">
-              <span>100% Artisanal Craft</span>
+              <span>Made in Spain</span>
               <span>•</span>
-              <span>Raw Shells &amp; Wood</span>
+              <span>Since 1998</span>
             </div>
           </div>
 
@@ -38,27 +39,27 @@ export function Footer() {
               Explore
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-stone/80">
-              <li><a href="#catalog" className="hover:text-gold transition-colors">The Artisan&apos;s Tray (Catalog)</a></li>
-              <li><a href="#story" className="hover:text-gold transition-colors">Our Family Story (Rosario 1998)</a></li>
-              <li><a href="#events" className="hover:text-gold transition-colors">Summer Fairs &amp; Markets</a></li>
-              <li><a href="#instagram" className="hover:text-gold transition-colors">Instagram Styling Ideas</a></li>
+              <li><Link href="/" className="hover:text-gold transition-colors">Shop Collection</Link></li>
+              <li><Link href="/story" className="hover:text-gold transition-colors">Our Story</Link></li>
+              <li><Link href="/fairs" className="hover:text-gold transition-colors">Fairs &amp; Markets</Link></li>
+              <li><a href="https://www.instagram.com/ifratelliaccesorios/" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-colors">Instagram</a></li>
             </ul>
           </div>
 
           {/* Col 3: Customer Care & Custom Orders */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="font-serif text-lg font-bold text-gold tracking-wide">
-              Sisters&apos; Guarantee
+              Customer Care
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-stone/80">
               <li>Free shipping on orders over €60</li>
-              <li>Custom sizing &amp; adjustments included</li>
+              <li>Free custom sizing &amp; adjustments</li>
               <li>Direct chat with Caro &amp; María</li>
-              <li>Pickup available at local fairs</li>
+              <li>Free pickup at local fairs</li>
             </ul>
           </div>
 
-          {/* Col 4: Community & Social (Featuring official links & Joaquín's custom PNG icons!) */}
+          {/* Col 4: Community & Social */}
           <div className="md:col-span-2 space-y-4">
             <h4 className="font-serif text-lg font-bold text-gold tracking-wide">
               Community

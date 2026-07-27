@@ -1,13 +1,13 @@
 'use client';
 
 import React from 'react';
-import { ArtisansTray } from '@/components/catalog/ArtisansTray';
+import { BrandStory } from '@/components/story/BrandStory';
 import { InstagramFeed } from '@/components/instagram/InstagramFeed';
 
-export default function Home() {
+export default function StoryPage() {
   return (
     <>
-      <ArtisansTray />
+      <BrandStory />
       <InstagramFeed />
     </>
   );

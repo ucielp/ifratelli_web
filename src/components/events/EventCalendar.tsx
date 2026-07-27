@@ -5,14 +5,11 @@ import { MOCK_FAIRS } from '@/lib/mock-data';
 import { format } from 'date-fns';
 
 /**
- * Robust local date parser to satisfy Critical Constraint #5:
- * Prevents UTC timezone shifting and incorrect month rendering on Vercel deployments
- * by explicitly constructing local year, month, and day integers.
+ * Robust local date parser to prevent UTC timezone shifting
  */
 function formatLocalDateSafe(dateStr: string): { monthDay: string; weekdayYear: string; monthOnly: string } {
   try {
     const [year, month, day] = dateStr.split('-').map(Number);
-    // Note: month is 0-indexed in JS Date
     const localDate = new Date(year, month - 1, day);
     return {
       monthDay: format(localDate, 'MMMM d'),
@@ -32,19 +29,19 @@ export function EventCalendar() {
   );
 
   return (
-    <section id="events" className="py-24 bg-linen">
+    <section id="events" className="py-20 bg-linen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header (Clean & Professional without decorative emojis) */}
-        <div className="text-center max-w-3xl mx-auto mb-12 space-y-4">
-          <span className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-olive/10 px-3.5 py-1.5 rounded-full">
-            Fairs &amp; Pop-Up Stalls • 2026 Season
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <span className="text-xs font-bold tracking-widest uppercase text-olive font-mono bg-stone/40 px-3.5 py-1.5 rounded-full border border-stone">
+            2026 Season
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight">
-            Meet Caro &amp; María in Person
-          </h2>
-          <p className="text-sm sm:text-base text-wood/80 leading-relaxed">
-            There is nothing like touching the natural cowrie shells and smooth Mallorca olive wood with your own hands. Visit our weekly coastal stalls to try on the collection or pick up your online order for free!
+          <h1 className="font-serif text-4xl sm:text-5xl font-normal text-earth tracking-tight">
+            Fairs &amp; Markets
+          </h1>
+          <p className="text-sm sm:text-base text-wood/80">
+            Come see us in person at our market stalls in Mallorca, El Masnou, and Barcelona. You can try on pieces or pick up online orders for free.
           </p>
 
           {/* City Filter Tabs */}
@@ -59,7 +56,7 @@ export function EventCalendar() {
                     : 'bg-stone/50 hover:bg-stone text-wood border border-stone'
                 }`}
               >
-                {city === 'All' ? 'All Mediterranean Fairs' : city}
+                {city === 'All' ? 'All Locations' : city}
               </button>
             ))}
           </div>
@@ -135,13 +132,6 @@ export function EventCalendar() {
               </div>
             );
           })}
-        </div>
-
-        {/* Note on Vercel timezone safety */}
-        <div className="mt-12 text-center">
-          <p className="text-[11px] font-mono text-wood/60 max-w-lg mx-auto bg-stone/40 p-3 rounded-xl border border-stone">
-            Technical Note: Date strings are parsed locally via safe integer construction to ensure zero timezone shifting across global deployments.
-          </p>
         </div>
 
       </div>
